@@ -1,0 +1,73 @@
+<div class="row">
+    <div class="col">
+        <h1 class="text-center text-danger mt-4 fs-1" style="font-weight: bolder; ">Add More</h1>
+      
+
+    </div>
+</div>
+<div class="row p-2">
+   
+ 
+   
+        <div class="col-4"></div>
+    <div class="col-4 p-3" >
+        <form class="border p-3 rounded mb-3">
+            <div class="form-floating">
+                <input  [(ngModel)]="vehicle.id" name="VehicleId" class="form-control"
+                    placeholder="Vehicle Id ">
+                <label >Id</label>
+            </div><br>
+            <div class="form-floating">
+                <input  [(ngModel)]="vehicle.Name" name="VehicleName" class="form-control"
+                    placeholder="Vehicle Name ">
+                <label >Name</label>
+            </div><br>
+            <div class="form-floating mb-3">
+                <input [(ngModel)]="vehicle.Displacement" name="VehicleDisplacement" class="form-control"
+                    placeholder="Displacement">
+                <label >Displacement</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input [(ngModel)]="vehicle.Mileage" name="VehicleMileage" class="form-control"
+                    placeholder="Mileage">
+                <label>Mileage</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input  [(ngModel)]="vehicle.photo" name="VehiclePhoto" class="form-control"
+                    placeholder="Photo">
+                <label>Photo</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input  [(ngModel)]="vehicle.Weight" name="VehicleWeight" class="form-control"
+                    placeholder="Weight">
+                <label>Kerb Weight</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input  [(ngModel)]="vehicle.Wheel" name="VehicleWheel" class="form-control"
+                    placeholder="Wheel type">
+                <label>Wheel Type</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input  [(ngModel)]="vehicle.Power" name="VehiclePower" class="form-control"
+                    placeholder="Max Power">
+                <label>Max Power
+                </label>
+            </div>
+            <div class="form-floating mb-3">
+                <input [(ngModel)]="vehicle.Transmission" name="VehicleTransmission" class="form-control"
+                    placeholder="Transmission">
+                <label>Transmission
+                </label>
+            </div>
+            <div class="form-floating mb-3">
+                <input  [(ngModel)]="vehicle.Price"name="VehiclePrice" class="form-control"
+                    placeholder="Ex-Showroom Price">
+                <label>Ex-Showroom Price
+                </label>
+            </div>
+            <button (click)="addVehicle()" type="button" class="btn btn-success rounded "><i class="fa-sharp fa-solid fa-plus " style="color: #ffffff;"></i></button> <button
+                routerLink="" class="btn btn-danger rounded" style="float: right;"> <i class="fa-sharp fa-solid fa-xmark" style="color: #ffffff;"></i></button>
+        </form>
+    </div>
+    <div class="col-4">
+</div>

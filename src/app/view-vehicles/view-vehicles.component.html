@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col">
+      <h1 class="text-center text-danger mt-4 fs-1" style="font-weight: bolder; ">View Contact </h1>
+    
+        <!-- <pre>
+          {{contact|json}}
+        </pre> -->
+  </div>
+  </div><br><br>
+<div class="row">
+  <div class="col-6">
+    <ul class="list-group">
+      <li class="list-group-item">id : a1  </li>
+      <li class="list-group-item">Name : {{vehicle.Name}}  </li>
+      <li class="list-group-item">Displacement : {{vehicle.Displacement}}</li>
+      <li class="list-group-item">Mileage  : {{vehicle.Mileage}} </li>
+      <li class="list-group-item">Kerb Weight : {{vehicle.Weight}} </li>
+      <li class="list-group-item">Wheel Type : {{vehicle.Type}} </li>
+      <li class="list-group-item">Max Power(bhp) : {{vehicle.Power}} </li>
+      <li class="list-group-item">Transmission : {{vehicle.Transmission}} </li>
+      <li class="list-group-item">Ex-Showroom Price : {{vehicle.Price}} </li>
+     
+    </ul>
+  </div>
+  <div class="col-6  text-center rounded p-2" ><br><br><br>
+      <img width="350px" [src]="vehicle.photo" alt="">
+  </div>
+
+  
+</div>
+<div class="p-5">
+  <button class="btn btn-primary mb-3" routerLink=""><i class="fa-sharp fa-solid fa-right-to-bracket" style="color: #030408;"></i></button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

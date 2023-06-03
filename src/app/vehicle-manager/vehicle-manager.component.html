@@ -1,0 +1,43 @@
+
+
+
+
+
+<div class="container">
+  <div class="row">
+      <div class="col"><br>
+         
+          <a routerLink="/vehicle/add" class="btn  shadow p-2" style=" float: right; "> Add Vehicle</a>
+      </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-3"></div>
+  <div class="col-6" style=" display: flex; align-items: center;">
+      <input type="text" (keyup)="search($event)" class=" mt-4 mb-4 p-2 me-2" placeholder="Search Vehicles">
+     
+  </div>
+</div>
+<!-- card -->
+<!-- {{allInventory|json}} -->
+<div class="row">
+  <div class="card m-5"*ngFor="let vehicle of allVehicles | filter: searchkey:'Name'">
+      <div class="box">
+          <div class="img">
+            <img width="100%" class="img"
+            [src]="vehicle.photo"
+            alt="" height="200" [width]="200" style="border-radius: 50%;">
+          </div>
+          <h2 style="color: #ffffff;"> {{vehicle.Name}}  <li><a routerLink="/vehicle/view/{{vehicle.id}}"><i class="fa-sharp fa-solid fa-eye"
+            style="color: #ffffff;"></i></a></li> <br>
+          <span class="mt-2" style="color: #ffffff;">Kerb Weight : {{vehicle.Weight}}</span></h2>
+          <p style="color: #ffffff;"> Ex-Showroom Price: {{vehicle.Price}} <a (click)="deleteVehicle(vehicle.id)"><i class="fa-sharp fa-solid fa-trash"
+            style="color: #ffffff;"></i></a> <br> 
+              Max Power : {{vehicle.Power}} <a routerLink="/vehicle/update/{{vehicle.id}}"><i
+                class="fa-sharp fa-solid fa-pen-to-square " style="color: #fdfdfd;"></i></a> <br>
+             
+
+      </div>
+  </div>
+</div>

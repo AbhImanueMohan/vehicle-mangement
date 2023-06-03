@@ -1,0 +1,192 @@
+Contact Management System
+
+1.Create a project name - ng new ContactApp(project_name)
+2.cd ContactApp
+3.code .
+4.Project Run - ng serve --open
+5.clear App.component.html file
+src/app/app.component.html file
+6.install Bootstrap, fontawesome , and google fonts                           
+-> install Bootstrap - npm i bootstrap
+-> install FontAwesome - npm i --save  @fortawesome/fontawesome-free and copy paste link 
+->configure -to avoid site down issues
+   In angular.json
+7.Create components
+  ->Contact Manager - ng g c contactManager
+  ->Add Contact - ng g c addContact
+  ->Update Contact - ng g c updateContact
+  ->View Contact - ng g c viewContact
+8.Setup path for each component that we need to display in web page.  
+  -> app-routing.module.ts ,
+   Routes [
+      {
+    path: '', redirectTo: 'contact/admin', pathMatch: 'full'
+  },
+  {
+    //path for contact manager
+    path: 'contact/admin', component: ContactManagerComponent
+  }
+   ]
+
+ 9.component design 
+
+ 10.api creation for fetching data
+
+ 11.Create a folder for server and db.json file(src/serve/db/.json)
+ 12.create contact data add to db.json
+ 13.server run  
+ 14.server run 
+ ->cd src
+ ->cd server
+ ->npm init - for creating package.json
+ ->npm i json -server 
+ ->edit package.json file as 
+   "scripts": {
+      "start" : "json-server --watch db.json --port 3000"
+   },
+ ->npm start  
+
+ 14.create model for contact and group
+ ->src/models/myContact.ts  
+ ->src/models/myGroup.ts  
+
+ 15.Data fetching
+
+ javascript - promise ->      .then()         .catch()
+ typeScript - observable ->   .subscribe()    .catch()
+
+ 16.Services
+  pass data from one component to another.
+  if two component share same data then we used to create a new service.
+
+  create a new service -> ng g s service_name
+
+  create a new service API Services -> ng g service/api
+
+17.HttpClientModule - for using http methods
+  ->import HttpClientModule in app.module.ts
+
+18.Dependency injection
+  data sharing between two dependent class
+  ->perform inside the constructor
+  ->constructor executes first
+  Syntax : access specifier  variable_name : class_name
+
+  constructor(access specifier variable_name : class_name)    
+
+
+19.Data Binding - data sharing inside a component
+  1) One way data binding - Data passes through  one direction
+
+     a)Component to view (ts->html)
+        i)String interpolation - {{variable_name}} - (html)
+        ii)Property binding - [attribute_name] = "property_name"
+      
+     b)View to component (html->ts) 
+        i)Event binding - (event) = "function_name()"
+          js - Onclick
+          ts - (click) 
+
+        ii)Event binding using $event - (event)="function_name($event)"
+
+ 
+  2) Two way data binding - Data passes through two direction
+
+
+20.Directives - To manipulate Development 
+
+  1)Component Directives
+  2)Structural Directives
+    i)*ngIf   - *ngIf = "Condition"
+    ii)*ngFor - *ngFor = "let variable_name of array_name"
+
+
+21.Activated route
+   It provides access to information about a route associated with a component
+   that is loaded in an outlet.
+
+   parameters
+   ->url
+   ->params - An observable of the matrix parameters scoped to this route.
+
+
+22. Pipes
+Pipes are simple function to use in template expressionto accept an input value and return
+a transformed value.
+
+create a pipe in angular - ng g p pipe_folder/pipe_name
+
+searching - ng g p pipes/filter
+
+
+
+image uploading from desktop : img src ="../../asset"
+
+\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////////
+
+
+<div id="card">
+  <div class="row" >
+    <div class="col ">
+    
+      
+      <!-- string interpolation -->
+      <!-- {{ heading}} -->
+      <a routerLink="/vehicle/add" class="btn  m-4" style="float: right; color: rgb(232, 232, 243); background-color: blue;">Add Vehicle&nbsp;&nbsp;</a>
+    </div>
+  </div>
+  <!-- {{allContacts|json}} -->
+  <div class="row m-4" >
+    <div class="col-6" >
+      <!-- event always in parsanthesis -->
+      <input type="text" (keyup)="search($event)" class="form-control m-4 w-50 text-center rounded " id="search" placeholder="Search Vehicles">
+    </div>
+  </div>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="row m-4 " id="card"  >
+  
+    <div class="col-6 p-3" *ngFor="let vehicle of allVehicles | filter: searchKey:'Name'">
+      <div class="card" style="height: 250px; width: 600px; ">
+        <div class="card-body" style="background-color:khaki;" >
+          <div class="row"  >
+            <div class="col-6 p-3" style="background-color:khaki;">
+              <!-- image -->
+              <img width="100%" class="img"
+                [src]="vehicle.photo"
+                alt="" height="200" [width]="200" style="border-radius: 50%;">
+            </div>
+            <div class="col-6 w-50" style="background-color: darkseagreen;"><br><br>
+              <!-- Contact Details -->
+              <ul class="list-group">
+                <li class="list-group-item">Name: {{vehicle.Name}} <a routerLink="/vehicle/view/{{vehicle.id}}">
+                   </a></li>
+                <li class="list-group-item">Kerb Weight : {{vehicle.Weight}} <a routerLink="/vehicle/update/{{vehicle.id}}"><i
+                      class="fa-sharp fa-solid fa-pen-to-square " style="color: #060709;"></i></a></li>
+                <li class="list-group-item">Ex-Showroom Price: {{vehicle.Price}} <a (click)="deleteVehicle(vehicle.id)"><i class="fa-sharp fa-solid fa-trash"
+                      style="color: #0a0a0b;"></i></a></li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

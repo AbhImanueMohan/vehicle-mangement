@@ -1,0 +1,15 @@
+*{
+    padding: 0;
+    background-color:  blueviolet;
+  
+}
+#navbarText{
+    padding:20px;
+}
+a{
+    font-size: larger;
+    font-weight: bolder;
+}
+.nav-item{
+    margin-left: 70px;
+}

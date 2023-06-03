@@ -1,0 +1,58 @@
+<div class="row">
+    <div class="col">
+        <h1 class="text-center text-danger mt-4 fs-1" style="font-weight: bolder; ">Update- Vehicle <i class="fa-sharp fa-solid fa-vehicle-plus danger" ></i></h1>
+    </div>
+    
+    <div class="row p-2">
+        <div class="col-4"></div>
+        <div class="col-4 p-3">
+            <form class="border p-3  rounded mb-3">
+                <div class="form-floating">
+                    <input type="text" [(ngModel)]="vehicle.id" name="vehicleId" class="form-control" placeholder="Vehicle Name ">
+                    <label>Id :</label>
+                </div><br>
+                <div class="form-floating">
+                    <input type="text" [(ngModel)]="vehicle.Name" name="vehicleName" class="form-control" placeholder="Vehicle Name ">
+                    <label>Name :</label>
+                </div><br>
+                <div class="form-floating mb-3">
+                    <input type="text" [(ngModel)]="vehicle.Displacement" name="vehicleDisplacement" class="form-control" placeholder="Displacement">
+                    <label>Displacement :</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" [(ngModel)]="vehicle.Mileage" name="vehicleMileage" class="form-control" placeholder="Mileage">
+                    <label>Mileage  </label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" [(ngModel)]="vehicle.photo" name="vehicleImage" class="form-control" placeholder="Photo">
+                    <label>Photo</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" [(ngModel)]="vehicle.Weight" name="vehicleWeight"  class="form-control" placeholder="Weight">
+                    <label>Kerb Weight</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" [(ngModel)]="vehicle.Wheel" name="vehicleType" class="form-control" placeholder="Wheel type">
+                    <label>Wheel Type</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" [(ngModel)]="vehicle.Power" name="vehiclePower" class="form-control" placeholder="Max Power">
+                    <label>Max Power</label>
+                </div>
+                   <div class="form-floating mb-3">
+                    <input type="text" [(ngModel)]="vehicle.Transmission" name="vehicleTransmission" class="form-control" placeholder="Transmission">
+                    <label>Transmission</label>
+                </div>
+                   <div class="form-floating mb-3">
+                    <input type="text" [(ngModel)]="vehicle.Price" name="vehiclePrice" class="form-control" placeholder="Ex-Showroom Price">
+                    <label>Ex-Showroom Price</label>
+                </div>
+                <button (click)="updateVehicle()" type="button" class="btn btn-success rounded "><i class="fa-sharp fa-solid fa-plus " style="color: #ffffff;"></i></button> <button
+                routerLink="" class="btn btn-danger rounded" style="float: right;"> <i class="fa-sharp fa-solid fa-xmark" style="color: #ffffff;"></i></button>
+        </form>
+            
+        <div class="col-4"></div>
+          
+    
+
+
